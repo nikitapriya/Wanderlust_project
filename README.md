@@ -1,2 +1,6 @@
 # Wanderlust_project
-The world is big and we have good look at it before it gets dark.
+
+- The world is big and we have good look at it before it gets dark
+- You can explore the world with me
+
+Deployed here: https://wandrlust-project.onrender.com
