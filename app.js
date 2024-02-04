@@ -19,6 +19,7 @@ const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 //const mongoURL = "mongodb://127.0.0.1:27017/wanderlust"
 const dbURL = process.env.ATLASDB_url;
+const Listing = require("./models/listing.js");
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 main()
   .then(() => {
@@ -104,6 +105,14 @@ app.use("/", userRouter);
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 app.get("/", (req, res) => {
   res.render("listings/home.ejs");
+});
+
+app.post('/submit',async (req, res) => {
+  const formData = req.body;
+  const searchData =  formData;
+  let allListings = await Listing.find({});
+  console.log(searchData);
+  res.render("listings/search.ejs", { allListings, searchData });
 });
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -17,11 +17,15 @@
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
   }
+  .home-icon{
+    height: 40px;
+    width: 40px;
+  }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass fa-2xl"></i></a>
+      <a class="navbar-brand" href="/listings"> <img class="home-icon" src="https://cdn-icons-png.freepik.com/256/11499/11499703.png?ga=GA1.1.1476991640.1707029425" alt="Home"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,8 +35,9 @@
           
         </div>
         <div class="navbar-nav ms-auto">
-          <form class="d-flex" role="search" method="get" action="/listings" >
-            <input class="form-control me-2 form-input" type="search" placeholder="Search Destination" aria-label="Search">
+          <form class="d-flex" role="search" method="post" action="/submit" >
+            <label for="inputData"></label>
+            <input type="text" id="inputData" class="form-control me-2 form-input" name="inputData" placeholder="Search Destination" required>
             <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
           </form>
         </div>
